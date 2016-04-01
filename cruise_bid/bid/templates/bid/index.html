@@ -1,0 +1,24 @@
+<a href = "{% url 'bid:submitCruise' %}"><h3>Submit Cruise Here</h2></a>
+{% if allCruises %}
+    <table>
+    	<tr>
+    	<td>Name</td>
+    	<td>State</td>
+    	<td>Number of Plots</td>
+    	<td>Current Bid</td>
+    	<td>Place Bid</td>
+    	<tr>
+    {% for cruise in allCruises %}
+    	<td>{{cruise.name}}</td>
+    	<td>{{cruise.state}}</td>
+    	<td>{{cruise.numPlots}}</td>
+    	<td>{{cruise.bid}}</td>
+    	<td><a href="{% url 'bid:placeBid' cruise.id %}">$</a>
+    	</tr>
+    {% endfor %}	
+    <table>
+{% else %}
+    <p>No cruises are available.</p>
+{% endif %}
+
+

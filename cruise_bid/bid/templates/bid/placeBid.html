@@ -1,0 +1,10 @@
+<h2> Submit a bid for {{cruise.name}}</h2>
+<h3>Current Bid is ${{cruise.bid}}/plot</h3>
+<p>Note. an acceptable bid must exceed the current bid</p>
+<form action= "" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+
+
