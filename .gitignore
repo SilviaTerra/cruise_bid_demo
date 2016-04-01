@@ -1,4 +1,4 @@
-syntax:glob
 .DS_Store
 *.swp
-
+cruise_bid/db.sqlite3
+*.pyc
