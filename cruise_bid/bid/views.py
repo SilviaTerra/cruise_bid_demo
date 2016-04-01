@@ -32,12 +32,12 @@ def placeBid(request, cruise_id):
 def submitCruise(request):
     if request.method == 'POST':
         print 'Post'
-    newCruise = cruiseForm(request.POST)
-    if newCruise.is_valid():
-        Cruise.objects.create(name = newCruise.cleaned_data['name'],
-                              state = newCruise.cleaned_data['state'],
-                              numPlots = newCruise.cleaned_data['numPlots'],
-                              bid = 0)
+        newCruise = cruiseForm(request.POST)
+        if newCruise.is_valid():
+            Cruise.objects.create(name = newCruise.cleaned_data['name'],
+                                state = newCruise.cleaned_data['state'],
+                                numPlots = newCruise.cleaned_data['numPlots'],
+                                bid = 0)
     else:
         newCruise = cruiseForm()
     return render(request, 'bid/submitCruise.html', {'newCruise':newCruise})
